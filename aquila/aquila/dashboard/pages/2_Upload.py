@@ -38,8 +38,8 @@ if uploaded_file is not None:
             if not isinstance(receipt_data, dict):
                 st.error("Processing failed: response is not a valid JSON object.")
 
-            # with st.spinner("Saving to database..."):
-            #     insert_receipt(receipt_data, db_path=settings.db_config.db_path)
+            with st.spinner("Saving to database..."):
+                insert_receipt(receipt_data, db_path=settings.db_config.db_path)
 
             st.success("✅ Receipt has been processed and saved to the database.")
 
