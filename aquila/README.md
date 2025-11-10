@@ -19,7 +19,6 @@ The system integrates local database storage and modular AI tools for extensibil
 │   ├── config.py              # Configuration and environment variables
 │   ├── dashboard
 │   │   ├── Welcome.py         # Dashboard landing page
-│   │   ├── helper.py          # UI helpers
 │   │   └── pages
 │   │       ├── 1_Chat.py      # Chat interface with AI agent
 │   │       ├── 2_Upload.py    # Upload and process receipt images

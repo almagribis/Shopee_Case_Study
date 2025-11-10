@@ -1,8 +1,7 @@
 import asyncio
 import time
 import uuid
-from typing import List, Literal
-from fastapi import APIRouter, HTTPException, Query, Request
+from fastapi import APIRouter, HTTPException, Request
 from pydantic import BaseModel, Field
 
 from calyx.vectordb.vectordb import VectorDB
