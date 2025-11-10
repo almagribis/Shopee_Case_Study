@@ -1,0 +1,40 @@
+name: Build & Push Aquila to Docker Hub
+
+on:
+  push:
+    branches: [ "release" ]
+    paths:
+      - 'aquila/**'
+      - '.github/workflows/aquila-publish.yml'
+  pull_request:
+    branches: [ "release" ]
+    paths:
+      - 'aquila/**'
+      - '.github/workflows/aquila-publish.yml'
+
+jobs:
+
+  build-and-push:
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Docker Buildx
+        uses: actions/setup-buildx-action@v3
+
+      - name: Log in to Docker Hub
+        uses: docker/login-action@v3
+        with:
+          username: ${{ secrets.DOCKERHUB_USERNAME }}
+          password: ${{ secrets.DOCKERHUB_TOKEN }}
+          
+      - name: Build and push Aquila image
+        uses: docker/build-push-action@v6
+        with:
+          context: ./aquila
+          file: ./aquila/Dockerfile
+          push: true
+          tags: ${{ secrets.DOCKERHUB_USERNAME }}/aquila:release
