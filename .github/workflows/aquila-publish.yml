@@ -2,12 +2,12 @@ name: Build & Push Aquila to Docker Hub
 
 on:
   push:
-    branches: [ "release" ]
+    branches: [ "main" ]
     paths:
       - 'aquila/**'
       - '.github/workflows/aquila-publish.yml'
   pull_request:
-    branches: [ "release" ]
+    branches: [ "main" ]
     paths:
       - 'aquila/**'
       - '.github/workflows/aquila-publish.yml'
