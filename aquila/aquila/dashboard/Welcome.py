@@ -8,11 +8,12 @@ st.set_page_config(page_title="AI Food Online Order Insight Agent", page_icon="�
 
 header = "# Welcome to AI Food Online Order Insight Agent! 👋"
 description = """
-    This dashboard is dedicated to 
+    Welcome to the AI Food Online Order Insight Agent Dashboard.  
 
-    If you have any questions or need assistance, don't hesitate to contact: **Al Magribi Sadli** - al_magribisadli@gmail.com
-    
-    Thank you for joining the AI Food Online Order Insight Agent! We hope you have a valuable and inspirational experience here.
+For any questions or assistance, please contact **Al Magribi Sadli** at al_magribisadli@gmail.com.  
+
+Thank you for visiting — we hope you find the insights helpful and inspiring!
+
 
 """
 st.title("AI Food Online Order Insight Agent")

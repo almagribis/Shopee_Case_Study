@@ -1,4 +1,3 @@
-from langchain.chat_models import init_chat_model
 from langchain_community.utilities import SQLDatabase
 from langchain_community.agent_toolkits import SQLDatabaseToolkit
 from langchain.agents import create_agent
@@ -30,8 +29,6 @@ class AgentFoodReceipt():
         self.llm = self.LLM = ChatGoogleGenerativeAI(google_api_key=settings.llm_config.api_key,
                                                      model=settings.llm_config.model)
         db = SQLDatabase.from_uri(f"sqlite:///{settings.db_config.db_path}")
-        print(f"Available tables: {db.get_usable_table_names()}")
-        print(f'Sample output: {db.run("SELECT * FROM orders LIMIT 5;")}')
         toolkit = SQLDatabaseToolkit(db=db, llm=self.llm)
         self.tools = toolkit.get_tools()
         self.load_agent()
@@ -44,5 +41,4 @@ class AgentFoodReceipt():
     def main(self, query:str):
         response = self.agent.invoke({"messages": [{"role":"user",
                                                   "content":query}]})
-        print(response)
         return response["messages"][-1].content

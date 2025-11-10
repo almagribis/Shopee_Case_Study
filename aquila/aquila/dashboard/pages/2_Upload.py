@@ -1,6 +1,5 @@
 import streamlit as st
 import base64
-from typing import Dict, Any, List
 from aquila.config import settings
 from aquila.tools.extract import ExtractReceipt
 from aquila.tools.helper import extract_json
